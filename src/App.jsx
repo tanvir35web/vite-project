@@ -2,22 +2,19 @@ import { useRef } from 'react';
 
 const App = () => {
 
-  let firstName, lastName, fullName = useRef();
- const info = () => {
+  let heading = useRef();
 
-  let fName = firstName.value;
-  let lName = lastName.value;
-
-  fullName.innerText = fName + ' ' + lName;
-
- }
+  const change = () => {
+    heading.current.classList.remove("text-green");
+    heading.current.classList.add("text-red");
+  }
 
   return (
     <div>
-      <input ref={(e) =>firstName = e } type="text" placeholder="What is Your First Name?"/><br />
-      <input ref={(e) => lastName = e} type="text" placeholder="What is Your Last Name?"/><br />
-      <button onClick={info}>Submit</button>
-      <h2 ref={(e)=>fullName = e}></h2>
+       <h1 className='text-green' ref={heading}>
+        This is Heading Text
+        </h1>
+       <button onClick = {change}> Change </button>
     </div>
   );
 };

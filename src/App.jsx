@@ -2,18 +2,15 @@ import { useRef } from 'react';
 
 const App = () => {
 
-  let heading = useRef();
+  let number = useRef(0);
 
   const change = () => {
-    heading.current.classList.toggle("text-green");
-    // heading.current.classList.add("text-red");
+    number.current ++;
+    console.log(number.current);
   }
 
   return (
     <div>
-       <h1 className='text-green' ref={heading}>
-        This is Heading Text
-        </h1>
        <button onClick = {change}> Change </button>
     </div>
   );

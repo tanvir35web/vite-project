@@ -5,8 +5,8 @@ const App = () => {
   let heading = useRef();
 
   const change = () => {
-    heading.current.classList.remove("text-green");
-    heading.current.classList.add("text-red");
+    heading.current.classList.toggle("text-green");
+    // heading.current.classList.add("text-red");
   }
 
   return (
